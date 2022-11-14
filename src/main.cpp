@@ -368,7 +368,6 @@ void setup() {
   Serial.println("");
   Serial.println("---------------------------------------------------");
   Serial.println("");
-  es100.begin(es100Int, es100En);
   lcd.begin(20, 4);
   lcd.clear();
   lcd.setCursor(0, 1);
@@ -377,6 +376,8 @@ void setup() {
   lcd.print("    Version 1.0");
   delay(2000);
   lcd.clear();
+  
+  es100.begin(es100Int, es100En);
   rtc.begin();
   
   attachInterrupt(digitalPinToInterrupt(es100Int), atomic, FALLING);
