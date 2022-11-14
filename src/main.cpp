@@ -359,8 +359,23 @@ void showlcd() {
 void setup() {
   Wire.begin();
   Serial.begin(9600);
+  Serial.println("");
+  Serial.println("---------------------------------------------------");
+  Serial.println("");
+  Serial.println("ES100 Master Clock - Version 1.0");
+  Serial.println("Matt Rude <matt@mattrude.com>");
+  Serial.println("https://github.com/mattrude/ES100-Demo-v1");
+  Serial.println("");
+  Serial.println("---------------------------------------------------");
+  Serial.println("");
   es100.begin(es100Int, es100En);
   lcd.begin(20, 4);
+  lcd.clear();
+  lcd.setCursor(0, 1);
+  lcd.print(" ES100 Master Clock");
+  lcd.setCursor(0, 2);
+  lcd.print("    Version 1.0");
+  delay(2000);
   lcd.clear();
   rtc.begin();
   
